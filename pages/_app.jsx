@@ -1,15 +1,40 @@
-import Footer from '../src/components/layout/Footer'
-import Header from '../src/components/layout/Header'
+import { useState, createContext } from 'react'
+import { Provider, useSelector } from 'react-redux'
+import rootReducer from 'src/store'
+import Footer from 'src/components/layout/Footer'
+import Header from 'src/components/layout/Header'
 
 import '../styles/globals.scss'
 
+import { createStore } from 'redux'
+
+const initialFormData = {
+  // id:'',
+  email: '',
+  nickname: '',
+  password: '',
+  confirmPassword: '',
+}
+export const FormContext = createContext({
+  formData: initialFormData,
+  setFormData: () => {},
+})
+
+const store = createStore(rootReducer)
+console.log(store.getState())
+
 function MyApp({ Component, pageProps }) {
+  const [formData, setFormData] = useState(initialFormData)
+  // const user = useSelector((state) => state.user)
+  // console.log(user)
   return (
-    <div>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <FormContext.Provider value={{ formData, setFormData }}>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </FormContext.Provider>
+    </Provider>
   )
 }
 

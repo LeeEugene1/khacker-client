@@ -1,4 +1,9 @@
 import React from 'react'
+import Logout from 'src/components/layout/Logout'
+import Login from 'src/components/layout/Login'
+
+// import Login from './Logout.jsx'
+
 // import logo from '/public/images/logo.png'
 // import styles from '../../../styles/Home.module.scss'
 
@@ -12,11 +17,10 @@ function Header() {
       </div>
       <nav>
         <ul>
+          <Login />
+          <Logout />
           <li>
             <a href="/qna">궁금해요</a>
-          </li>
-          <li>
-            <a href="/myPage">마이페이지</a>
           </li>
         </ul>
       </nav>
