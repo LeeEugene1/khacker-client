@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Logout from 'src/components/layout/Logout'
 import Login from 'src/components/layout/Login'
+import { FormContext } from 'pages/_app'
+import { useSelector } from 'react-redux'
 
 // import Login from './Logout.jsx'
 
@@ -8,6 +10,8 @@ import Login from 'src/components/layout/Login'
 // import styles from '../../../styles/Home.module.scss'
 
 function Header() {
+  const user = useSelector((state) => state.user)
+  const { formData, setFormData } = useContext(FormContext)
   return (
     <div className="Menu">
       <div className="Menu__logo">
@@ -17,8 +21,7 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <Login />
-          <Logout />
+          {user.user ? <Logout /> : <Login />}
           <li>
             <a href="/qna">궁금해요</a>
           </li>

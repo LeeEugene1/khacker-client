@@ -8,15 +8,17 @@ export const USER_LOGIN = 'user/LOGIN'
 export const USER_LOGOUT = 'user/LOGOUT'
 export const USER_SIGNUP = 'user/create'
 
-// const is_logined = sessionStorage.getItem('is_logined')
-const is_logined = null
+let isLogined = null
+if (typeof window !== 'undefined') {
+  isLogined = sessionStorage.getItem('isLogined')
+}
 
 // 액션생성함수
-export function LOGIN({ is_logined }) {
+export function LOGIN({ isLogin }) {
   return {
     type: USER_LOGIN,
     payload: {
-      is_logined: sessionStorage.setItem('is_logined', is_logined),
+      isLogined: sessionStorage.setItem('isLogined', isLogin),
     },
   }
 }
@@ -30,7 +32,8 @@ export function LOGOUT() {
 const initialState = {
   // email:null,
   // password:null,
-  user: is_logined ? true : null,
+  //   user: isLogined ? true : null,
+  user: isLogined,
 }
 
 // 리듀서
@@ -43,7 +46,7 @@ export default function user(state = initialState, action) {
       }
     case USER_LOGOUT:
       return {
-        user: sessionStorage.removeItem('is_logined'),
+        user: sessionStorage.removeItem('isLogined'),
       }
     default:
       return state

@@ -40,7 +40,7 @@ function access() {
       window.location.href = '/'
       dispatch(
         LOGIN({
-          is_logined: data.is_logined,
+          isLogin: data.is_logined,
         }),
       )
     }
