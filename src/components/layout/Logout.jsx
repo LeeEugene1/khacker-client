@@ -1,8 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { LOGOUT } from 'src/store/modules/user'
+import { useRouter } from 'next/router'
 
 function Logout() {
+  const router = useRouter()
   const dispatch = useDispatch()
   const handleLogout = (e) => {
     e.preventDefault()
@@ -12,12 +14,10 @@ function Logout() {
     <>
       {/* {user.name} */}
       <li>
-        <a href="/myPage">내정보</a>
+        <div onClick={() => router.push('/myPage')}>내정보</div>
       </li>
       <li>
-        <a href="/" onClick={(e) => handleLogout(e)}>
-          로그아웃
-        </a>
+        <div onClick={(e) => handleLogout(e)}>로그아웃</div>
       </li>
     </>
   )

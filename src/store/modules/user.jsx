@@ -23,6 +23,7 @@ export function LOGIN({ isLogin }) {
   }
 }
 export function LOGOUT() {
+  if (localStorage.getItem('userInfo')) localStorage.removeItem('userInfo')
   return {
     type: USER_LOGOUT,
   }

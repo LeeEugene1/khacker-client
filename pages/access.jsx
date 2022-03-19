@@ -37,6 +37,12 @@ function access() {
         alert('등록되지 않은 아이디이거나 아이디 또는 비밀번호를 잘못 입력하였습니다')
         return false
       }
+      setFormData({
+        ...formData,
+        email: data.email,
+        nickname: data.nickname,
+      })
+      localStorage.setItem('userInfo', JSON.stringify(formData))
       window.location.href = '/'
       dispatch(
         LOGIN({
