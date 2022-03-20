@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Logout from 'src/components/layout/Logout'
 import Login from 'src/components/layout/Login'
-import { FormContext } from 'pages/_app'
 import { useSelector } from 'react-redux'
 
 // import Login from './Logout.jsx'
@@ -11,7 +10,6 @@ import { useSelector } from 'react-redux'
 
 function Header() {
   const user = useSelector((state) => state.user)
-  const { formData, setFormData } = useContext(FormContext)
   return (
     <div className="Menu">
       <div className="Menu__logo">
