@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { FormContext } from '@/pages/_app'
 import FormInput from 'src/components/layout/FormInput'
 import Button from 'src/components/styled/button'
+import axiosWrapper from 'src/axiosWrapper'
+import { HOST, USER_UPDATE } from 'src/store/modules/user'
 
 function myPage() {
   const initialErrorMessage = {
@@ -27,13 +29,24 @@ function myPage() {
       userInfo = JSON.parse(localStorage.getItem('userInfo'))
       setFormData({
         ...formData,
+        id: userInfo.id,
         email: userInfo.email,
         nickname: userInfo.nickname,
       })
     }
   }, [])
   const handleUpdateSubmit = (e) => {
-    alert('dd')
+    e.preventDefault()
+    const url = `${HOST}/${USER_UPDATE}`
+    const requestBody = {
+      email: formData.email,
+      id: formData.id,
+      nickname: formData.nickname,
+      password: formData.password,
+    }
+    axiosWrapper('put', url, requestBody)
+    localStorage.setItem('userInfo', JSON.stringify(formData))
+    alert('회원정보가 수정되었습니다.')
   }
   return (
     <section>

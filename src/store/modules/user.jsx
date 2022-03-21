@@ -7,6 +7,7 @@ export const HOST = 'http://localhost:3000'
 export const USER_LOGIN = 'user/LOGIN'
 export const USER_LOGOUT = 'user/LOGOUT'
 export const USER_SIGNUP = 'user/create'
+export const USER_UPDATE = 'user/update'
 
 let isLogined = null
 if (typeof window !== 'undefined') {
@@ -31,9 +32,6 @@ export function LOGOUT() {
 
 // 초기상태
 const initialState = {
-  // email:null,
-  // password:null,
-  //   user: isLogined ? true : null,
   user: isLogined,
 }
 
