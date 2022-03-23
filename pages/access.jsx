@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { useDispatch } from 'react-redux'
+import Router from 'next/router'
 import axiosWrapper from 'src/axiosWrapper'
 import Button from 'src/components/styled/button'
 import FormInput from 'src/components/layout/FormInput'
@@ -38,7 +39,7 @@ function access() {
         return false
       }
       localStorage.setItem('userInfo', JSON.stringify(data))
-      window.location.href = '/'
+      Router.push('/')
       dispatch(
         LOGIN({
           isLogin: data.is_logined,
@@ -58,7 +59,7 @@ function access() {
     }
     axiosWrapper('POST', url, requestBody)
     alert('회원가입이 완료되었습니다.')
-    window.location.href = '/'
+    Router.push('/')
   }
   const [toggleActive, setToggleActive] = useState(0)
 

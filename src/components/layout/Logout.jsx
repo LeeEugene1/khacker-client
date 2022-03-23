@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { LOGOUT } from 'src/store/modules/user'
 import { useRouter } from 'next/router'
+import Router from 'next/router'
 
 function Logout() {
   const router = useRouter()
@@ -9,6 +10,7 @@ function Logout() {
   const handleLogout = (e) => {
     e.preventDefault()
     dispatch(LOGOUT())
+    Router.push('/')
   }
   return (
     <>
