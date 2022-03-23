@@ -6,6 +6,7 @@ import Button from 'src/components/styled/button'
 import FormInput from 'src/components/layout/FormInput'
 import { HOST, LOGIN, USER_LOGIN, USER_SIGNUP } from 'src/store/modules/user'
 import { FormContext } from 'pages/_app'
+import useLocalStorage from 'src/hooks/useLocalStorage'
 
 function access() {
   const { formData, setFormData } = useContext(FormContext)
@@ -38,7 +39,7 @@ function access() {
         alert('등록되지 않은 아이디이거나 아이디 또는 비밀번호를 잘못 입력하였습니다')
         return false
       }
-      localStorage.setItem('userInfo', JSON.stringify(data))
+      useLocalStorage('userInfo', data.userInfo)
       Router.push('/')
       dispatch(
         LOGIN({

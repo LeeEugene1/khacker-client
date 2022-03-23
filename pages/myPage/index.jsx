@@ -5,6 +5,7 @@ import FormInput from 'src/components/layout/FormInput'
 import Button from 'src/components/styled/button'
 import axiosWrapper from 'src/axiosWrapper'
 import { HOST, USER_UPDATE } from 'src/store/modules/user'
+import useLocalStorage from 'src/hooks/useLocalStorage'
 
 function myPage() {
   const initialErrorMessage = {
@@ -44,8 +45,9 @@ function myPage() {
       nickname: formData.nickname,
       password: formData.password,
     }
-    axiosWrapper('put', url, requestBody)
-    localStorage.setItem('userInfo', JSON.stringify(formData))
+    axiosWrapper('put', url, requestBody).then((data) => {
+      useLocalStorage('userInfo', data.userInfo)
+    })
     alert('회원정보가 수정되었습니다.')
   }
   return (
