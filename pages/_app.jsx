@@ -5,6 +5,7 @@ import Footer from 'src/components/layout/Footer'
 import Header from 'src/components/layout/Header'
 
 import '../styles/globals.scss'
+import 'normalize.css'
 
 import { createStore } from 'redux'
 

@@ -23,15 +23,13 @@ function Header() {
         <ul>
           {user.user ? <Logout /> : <Login />}
           <li>
-            <a href="/qna">커뮤니티</a>
+            <a href="/qna">게시글</a>
           </li>
           {/* <li>
             <a href="/qna">채용정보</a>
           </li> */}
           <li>
-            <Button onClick={(e) => checkLogin(e, user.user)}>
-              <a href="/article/write">글쓰기</a>
-            </Button>
+            <Button onClick={(e) => checkLogin(e, user.user)}>글쓰기</Button>
           </li>
         </ul>
       </nav>

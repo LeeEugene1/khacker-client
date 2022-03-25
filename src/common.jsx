@@ -17,4 +17,5 @@ export const checkLogin = (e, user) => {
     Router.push('/access')
     return false
   }
+  Router.push('/article/write')
 }
