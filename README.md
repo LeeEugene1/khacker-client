@@ -9,6 +9,7 @@
 
 ## Tech Requirement (Tech Stack)
 
+- HTML, SCSS/styled-components, Javascript
 - Create-next-app
 - Next.js
 - ESLint
