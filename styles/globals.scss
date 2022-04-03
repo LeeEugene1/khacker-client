@@ -12,6 +12,10 @@ $mint: rgb(0, 181, 148);
 // section {
 //   padding: 35px;
 // }
+section {
+  height: 100vh;
+  margin-top: 50px;
+}
 
 .Menu {
   display: flex;
@@ -25,8 +29,12 @@ $mint: rgb(0, 181, 148);
     width: 150px;
   }
   & nav {
+    display: flex;
+    align-items: center;
+    padding: 0 25px 0 0;
+
     & ul {
-      padding-right: 25px;
+      margin: 0;
       & li {
         list-style: none;
         display: inline-block;
@@ -42,6 +50,10 @@ $mint: rgb(0, 181, 148);
         }
       }
     }
+  }
+  &__icon {
+    display: none;
+    font-size: 20px;
   }
 }
 
@@ -193,7 +205,6 @@ input {
     border-top: none;
     background-color: #fff;
     border: 1px solid rgba(34, 36, 38, 0.15);
-    border-top: none;
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
 
@@ -212,7 +223,64 @@ input {
     border-top: none;
   }
 
+  &__myPage {
+    padding: 35px;
+    background-color: #fff;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
+
   &__form--error {
     color: red;
+  }
+}
+
+.write {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 35px;
+  }
+}
+
+.footer {
+  &__copyright {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Menu {
+    &__icon {
+      display: flex;
+    }
+    &__links {
+      display: none;
+    }
+    &__links--mobile {
+      position: absolute;
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      left: 0;
+      top: 50px;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      text-align: center;
+      border-bottom: 1px solid $grey;
+    }
+  }
+  li {
+    padding: 10px;
   }
 }
