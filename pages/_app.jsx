@@ -3,6 +3,7 @@ import { Provider, useSelector } from 'react-redux'
 import rootReducer from 'src/store'
 import Footer from 'src/components/layout/Footer'
 import Header from 'src/components/layout/Header'
+import 'semantic-ui-css/semantic.min.css'
 
 import '../styles/globals.scss'
 import 'normalize.css'

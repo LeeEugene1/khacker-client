@@ -258,6 +258,14 @@ input {
   }
 }
 
+.ui.dimmer .ui.workaround.loader:before {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.ui.dimmer .ui.workaround.loader:after {
+  border-color: #767676 transparent transparent;
+}
+
 @media screen and (max-width: 780px) {
   .Menu {
     &__icon {
