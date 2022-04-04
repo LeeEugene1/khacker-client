@@ -1,6 +1,10 @@
-function useLocalStorage(key, initialValue) {
+function useLocalStorage(key, initialValue, action = 'set') {
   if (typeof window !== 'undefined') {
-    window.localStorage.setItem(key, JSON.stringify(initialValue))
+    if (action === 'set') {
+      window.localStorage.setItem(key, JSON.stringify(initialValue))
+    } else if (action === 'get') {
+      window.localStorage.getItem(key)
+    }
   }
 }
 

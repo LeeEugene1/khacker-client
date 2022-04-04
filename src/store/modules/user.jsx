@@ -8,6 +8,7 @@ export const USER_LOGIN = 'user/LOGIN'
 export const USER_LOGOUT = 'user/LOGOUT'
 export const USER_SIGNUP = 'user/create'
 export const USER_UPDATE = 'user/update'
+export const ARTICLE_LIST = ''
 
 let isLogined = null
 if (typeof window !== 'undefined') {

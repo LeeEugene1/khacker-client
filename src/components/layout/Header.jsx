@@ -14,9 +14,9 @@ function Header() {
   return (
     <div className="Menu">
       <div className="Menu__logo">
-        <a href="/">
+        <Link href="/">
           <img src="/images/logo.png" alt="" />
-        </a>
+        </Link>
       </div>
       <nav>
         <ul className={isMobile ? 'Menu__links--mobile' : 'Menu__links'}>

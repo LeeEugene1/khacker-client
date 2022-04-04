@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { HOST } from 'src/store/modules/user'
 import axios from 'axios'
@@ -7,39 +8,14 @@ import { Loader } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
 export default function Home() {
-  const [list, setList] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const url = `${HOST}/main`
-  console.log(list.id)
-  const getData = async () => {
-    const res = await axios.get(url)
-    // console.log(res.data)
-    setList(res.data.content)
-    setIsLoading(false)
-  }
-  useEffect(() => {
-    getData()
-  }, [])
   return (
     <>
-      {isLoading && (
-        <div>
-          <Head>
-            <title>케이해커 - 개발자 해외취업 커뮤니티</title>
-          </Head>
-          <Loader inline="centered" active>
-            Loading
-          </Loader>
-        </div>
-      )}
-      {!isLoading && (
-        <div>
-          <Head>
-            <title>케이해커 - 개발자 해외취업 커뮤니티</title>
-          </Head>
-          <ItemList list={list} />
-        </div>
-      )}
+      <Head>
+        <title>케이해커 - 개발자 해외취업 커뮤니티</title>
+      </Head>
+      <Link href="/community">
+        <a>더보기</a>
+      </Link>
     </>
     // <div className={styles.container}>
     //   <Head>

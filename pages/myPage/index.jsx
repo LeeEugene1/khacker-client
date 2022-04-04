@@ -56,7 +56,7 @@ function myPage() {
         <Head>
           <title>마이페이지</title>
         </Head>
-        <div className="tab__form active">
+        <div className="tab__myPage">
           <form onSubmit={(e) => handleUpdateSubmit(e)}>
             <FormInput
               label="이메일"
@@ -68,6 +68,7 @@ function myPage() {
               value={formData.email}
               errorMessage={errorMessage}
               setErrorMessage={setErrorMessage}
+              disabled
             />
             <FormInput
               label="닉네임"
