@@ -9,6 +9,7 @@ function community() {
   const [list, setList] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const url = `${HOST}/main`
+  console.log('babababa')
   console.log(list.id)
   const getData = async () => {
     const res = await axios.get(url)
@@ -33,7 +34,7 @@ function community() {
       )}
       {!isLoading && (
         <div>
-          <ItemList list={list} />
+          <ItemList key={list.id} list={list} />
         </div>
       )}
     </div>

@@ -10,7 +10,7 @@ function write() {
     author: '61f8161eac714bdf22e4fb1c',
     title: '',
     content: '',
-    board: '623d67274014912301a4ffdc',
+    board: '623d6912df87930d9bdc68eb',
   }
   const [formData, setFormData] = useState(initialState)
   function changeState(e) {

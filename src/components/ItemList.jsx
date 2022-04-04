@@ -1,17 +1,23 @@
 import React from 'react'
+import Link from 'next/link'
+import { HOST } from 'src/store/modules/user'
+import Router from 'next/router'
 
-function ItemList({ list }) {
-  console.log(list)
-  //   const articleTInfo = list
+function ItemList({ list, key }) {
+  const move = (id) => {
+    const url = `${HOST}/article/${id}`
+    // Router.push(`/qna/${id}`)
+    console.log(url)
+  }
   return (
     <div>
-      <div>게시글 제목</div>
+      <h3>게시글 제목</h3>
       <div>
         {list.map((item) => (
-          <p key={list._id}>
-            {item.title}
-            {/* {item.content?.title} */}
-          </p>
+          <Link href={`/view/${item._id}`}>
+            <p>{item.title}</p>
+            {/* <Link key={item._id} href="/qna/"></Link> */}
+          </Link>
         ))}
       </div>
     </div>
