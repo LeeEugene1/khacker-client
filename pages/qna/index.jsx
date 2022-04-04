@@ -3,8 +3,10 @@ import React, { useState, useEffect } from 'react'
 import { HOST } from 'src/store/modules/user'
 import axios from 'axios'
 import { Loader } from 'semantic-ui-react'
+import ItemList from 'src/components/ItemList'
 
 function qna() {
+  const [list, setList] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const url = `${HOST}/board/qna`
   const requestBody = {
@@ -13,6 +15,8 @@ function qna() {
   }
   const getData = async () => {
     const res = await axios.get(url)
+    setList(res.data.article)
+    // console.log(res.data.article)
     setIsLoading(false)
   }
   useEffect(() => {
@@ -28,7 +32,7 @@ function qna() {
           Loading
         </Loader>
       )}
-      {!isLoading && <div>content chere</div>}
+      {!isLoading && <ItemList list={list} />}
     </div>
   )
 }
