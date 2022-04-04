@@ -24,4 +24,5 @@ https://www.figma.com/file/WUUCEAI2VsnWPDPc9ksBM4/%EC%BC%80%EC%9D%B4%ED%95%B4%EC
 
 ## Script
 
+`yarn`
 `$npm run dev`

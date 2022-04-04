@@ -37,7 +37,6 @@ yarn-error.log*
 settings.json
 .prettierrc.js
 yarn.lock
-tsconfig.json
 next.config.js
 next-env.d.ts
 .eslintrc.json
