@@ -16,7 +16,7 @@ function Post({ pid, article, comment }) {
       {comment &&
         comment.map((each) => (
           <>
-            <p>{each.author}</p>
+            <p>{each.author.nickname}</p>
             <p>{each.content}</p>
           </>
         ))}
