@@ -1,33 +1,41 @@
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { HOST } from 'src/store/modules/user'
 
-function Post() {
-  const [list, setList] = useState([])
-  const router = useRouter()
-  const { pid } = router.query
-  const url = `${HOST}/article/${pid}`
-
-  const getData = async () => {
-    const res = await axios.get(url)
-    setList(res.data.article)
-  }
-
-  useEffect(() => {
-    if (pid) {
-      getData()
-    }
-  }, [pid])
-  console.log(list)
-
+function Post({ pid, article, comment }) {
   return (
-    <div>
-      <p>Post: {pid}</p>
-      <p>{list.title}</p>
-      <p>{list.content}</p>
-    </div>
+    <>
+      {article && (
+        <div>
+          <p>Post: {pid}</p>
+          <p>{article.board.title}</p>
+          <p>{article.author.nickname}</p>
+          <p>{article.content}</p>
+          <div>댓글 {article.commentCount}</div>
+        </div>
+      )}
+      {comment &&
+        comment.map((each) => (
+          <>
+            <p>{each.author}</p>
+            <p>{each.content}</p>
+          </>
+        ))}
+    </>
   )
 }
 
 export default Post
+
+export async function getServerSideProps(context) {
+  const pid = context.params.pid
+  const url = `${HOST}/article/${pid}`
+  const res = await axios.get(url)
+  console.log(res.data.comment)
+  return {
+    props: {
+      pid,
+      article: res.data.article,
+      comment: res.data.comment,
+    },
+  }
+}
