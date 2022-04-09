@@ -18,6 +18,7 @@ function Post({ pid, article, comment }) {
           <>
             <p>{each.author.nickname}</p>
             <p>{each.content}</p>
+            <p>{each.createdAt.replace('T', ' ').substring(0, 16)}</p>
           </>
         ))}
     </>
