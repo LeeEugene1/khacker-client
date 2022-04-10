@@ -22,16 +22,18 @@ function Header() {
         <ul className={isMobile ? 'Menu__links--mobile' : 'Menu__links'}>
           {user.user ? <Logout /> : <Login />}
           <li>
-            <a href="/community">커뮤니티</a>
+            <Link href="/community">
+              <a onClick={toggle}>커뮤니티</a>
+            </Link>
           </li>
           <li>
             <Link href="/qna">
-              <a>질문과 답변</a>
+              <a onClick={toggle}>질문과 답변</a>
             </Link>
           </li>
           <li>
             <Link href="/free">
-              <a>자유게시판</a>
+              <a onClick={toggle}>자유게시판</a>
             </Link>
           </li>
           {/* <li>
