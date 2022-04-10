@@ -2,6 +2,7 @@ import axios from 'axios'
 import { HOST } from 'src/store/modules/user'
 
 function Post({ pid, article, comment }) {
+  console.log(comment)
   return (
     <>
       {article && (
@@ -19,6 +20,13 @@ function Post({ pid, article, comment }) {
             <p>{each.author.nickname}</p>
             <p>{each.content}</p>
             <p>{each.createdAt.replace('T', ' ').substring(0, 16)}</p>
+            <p>대댓글 {each.replyCount}</p>
+            {each.replyCount > 0 &&
+              each.replies.map((reply) => (
+                <>
+                  <p>{reply.content}</p>
+                </>
+              ))}
           </>
         ))}
     </>
@@ -26,12 +34,11 @@ function Post({ pid, article, comment }) {
 }
 
 export default Post
-
 export async function getServerSideProps(context) {
   const pid = context.params.pid
   const url = `${HOST}/article/${pid}`
   const res = await axios.get(url)
-  console.log(res.data.comment)
+  console.log(res.data)
   return {
     props: {
       pid,
