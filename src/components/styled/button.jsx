@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   /* padding:1rem;  */
   /* 크기 */
-  height: 2.25rem;
+  height: 44px;
   font-size: 1rem;
   font-weight: bold;
   /* 색상 */
