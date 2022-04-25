@@ -21,24 +21,7 @@ function Header() {
       <nav>
         <ul className={isMobile ? 'Menu__links--mobile' : 'Menu__links'}>
           {user.user ? <Logout /> : <Login />}
-          <li>
-            <Link href="/community">
-              <a onClick={toggle}>커뮤니티</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/qna">
-              <a onClick={toggle}>질문과 답변</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/free">
-              <a onClick={toggle}>자유게시판</a>
-            </Link>
-          </li>
-          {/* <li>
-            <a href="/qna">채용정보</a>
-          </li> */}
+
           <li>
             <Button onClick={(e) => checkLogin(e, user.user)}>글쓰기</Button>
           </li>

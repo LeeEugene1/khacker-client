@@ -1,6 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
-
+@mixin innerBoard {
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 2px solid $light-grey;
+}
+@mixin liReset {
+  list-style: none;
+  display: inline-block;
+  margin: 0 10px;
+  & a {
+    color: $dark;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  & a:hover {
+    color: $dark-black;
+    cursor: pointer;
+  }
+}
 $grey: #959595;
+$light-grey: #fafafa;
 $black: #21252a;
 $dark: rgb(83, 89, 97);
 $dark-black: rgb(33, 37, 42);
@@ -43,18 +62,7 @@ section {
     & ul {
       margin: 0;
       & li {
-        list-style: none;
-        display: inline-block;
-        margin: 0 10px;
-        & a {
-          color: $dark;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        & a:hover {
-          color: $dark-black;
-          cursor: pointer;
-        }
+        @include liReset();
       }
     }
   }
@@ -148,7 +156,7 @@ input {
   font-size: 1rem;
   text-indent: 10px;
   &:hover {
-    border: 1px solid lightgray;
+    border: 1px solid $light-grey;
   }
   &:focus {
     border: 1px solid rgb(33, 37, 42);
@@ -156,6 +164,30 @@ input {
   & + & {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+}
+
+.banner {
+  padding: 30px;
+  color: $dark-black;
+  font-size: 25px;
+  &--font__mint {
+    color: $mint;
+  }
+}
+
+.GNB {
+  & ul {
+    margin: 0;
+    & li {
+      @include liReset();
+      border: 1px solid $mint;
+      color: $mint;
+      padding: 10px;
+      border-radius: 20px;
+      min-width: 70px;
+      text-align: center;
+    }
   }
 }
 
@@ -264,7 +296,17 @@ input {
     margin: 10px 0;
   }
 }
-
+.board {
+  padding: 30px;
+  background-color: $light-grey;
+  height: 100%;
+  &--title {
+    @include innerBoard;
+  }
+  &--content {
+    @include innerBoard;
+  }
+}
 .ui.dimmer .ui.workaround.loader:before {
   border-color: rgba(0, 0, 0, 0.1);
 }
