@@ -2,7 +2,8 @@ import Head from 'next/head'
 import React, { useState, useEffect } from 'react'
 import { HOST } from 'src/store/modules/user'
 import axios from 'axios'
-import ItemList from 'src/components/ItemList'
+import ItemList from 'src/components/layout/ItemList'
+import GNB from 'src/components/layout/Gnb'
 import { Loader } from 'semantic-ui-react'
 
 function community() {
@@ -25,6 +26,7 @@ function community() {
       <Head>
         <title>커뮤니티</title>
       </Head>
+      <GNB/>
       {isLoading && (
         <div>
           <Loader inline="centered" active>

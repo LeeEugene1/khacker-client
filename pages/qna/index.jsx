@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { HOST } from 'src/store/modules/user'
 import axios from 'axios'
 import { Loader } from 'semantic-ui-react'
-import ItemList from 'src/components/ItemList'
+import ItemList from 'src/components/layout/ItemList'
+import GNB from 'src/components/layout/Gnb'
 
 function qna() {
   const [list, setList] = useState([])
@@ -27,6 +28,7 @@ function qna() {
       <Head>
         <title>질문과 답변</title>
       </Head>
+      <GNB/>
       {isLoading && (
         <Loader inline="centered" active>
           Loading

@@ -23,7 +23,7 @@ $light-grey: #fafafa;
 $black: #21252a;
 $dark: rgb(83, 89, 97);
 $dark-black: rgb(33, 37, 42);
-$mint: rgb(0, 181, 148);
+$mint: rgb(0,204,170);
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
@@ -169,6 +169,7 @@ input {
 
 .banner {
   padding: 30px;
+  padding-bottom:0;
   color: $dark-black;
   font-size: 25px;
   &--font__mint {
@@ -177,16 +178,39 @@ input {
 }
 
 .GNB {
-  & ul {
+    & ul {
+    padding:30px;
     margin: 0;
-    & li {
-      @include liReset();
-      border: 1px solid $mint;
+  }
+
+  &__tab--li {
+    @include liReset();
+    border: 1px solid $mint;
+    color: $mint;
+    border-radius: 20px;
+    min-width: 80px;
+    text-align: center;
+	&:first-child{
+		margin-left:0
+	}
+    a {
       color: $mint;
       padding: 10px;
-      border-radius: 20px;
-      min-width: 70px;
-      text-align: center;
+      display: block;
+    }
+
+    &:hover {
+      background-color: $mint;
+      a {
+        color: white;
+      }
+    }
+
+    &.active {
+      background-color: $mint;
+      a {
+        color: white;
+      }
     }
   }
 }
@@ -297,9 +321,9 @@ input {
   }
 }
 .board {
-  padding: 30px;
-  background-color: $light-grey;
-  height: 100%;
+	padding: 30px;
+	padding-top:0;
+	height: 100%;
   &--title {
     @include innerBoard;
   }

@@ -10,9 +10,11 @@ function ItemList({ list, key }) {
     console.log(url)
   }
   return (
-    <div>
-      <h3>게시글 제목</h3>
-      <div>
+    <div className="board">
+      <div className="board--title">
+        <h3>질문과 답변</h3>
+      </div>
+      <div className="board--content">
         {list.map((item) => (
           <Link href={`/view/${item._id}`}>
             <p>{item.title}</p>

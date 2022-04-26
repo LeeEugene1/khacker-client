@@ -6,11 +6,18 @@ function Post({ pid, article, comment }) {
   return (
     <>
       {article && (
-        <div>
-          <p>Post: {pid}</p>
-          <p>{article.board.title}</p>
-          <p>{article.author.nickname}</p>
-          <p>{article.content}</p>
+        <div className="board">
+          {/* <p>Post: {pid}</p> */}
+          <div className="board--title">
+            <h3>{article.board.title}</h3>
+            <div>
+              <span>{article.author.nickname}</span>&nbsp;|&nbsp;
+              <span>{article.author.createdAt.replace('T', ' ').substring(0, 16)}</span>
+            </div>
+          </div>
+          <div className="board--content">
+            <p>{article.content}</p>
+          </div>
           <div>댓글 {article.commentCount}</div>
         </div>
       )}
