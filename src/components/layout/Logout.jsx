@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { LOGOUT } from 'src/store/modules/user'
 import { useRouter } from 'next/router'
 import Router from 'next/router'
+import Button from 'src/components/styled/button'
 
 function Logout() {
   const router = useRouter()
@@ -16,10 +17,12 @@ function Logout() {
     <>
       {/* {user.name} */}
       <li>
-        <div onClick={() => router.push('/myPage')}>내정보</div>
+        <Button primary onClick={() => router.push('/myPage')}>
+          내정보
+        </Button>
       </li>
       <li>
-        <div onClick={(e) => handleLogout(e)}>로그아웃</div>
+        <Button primary onClick={(e) => handleLogout(e)}>로그아웃</Button>
       </li>
     </>
   )
