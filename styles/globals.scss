@@ -172,11 +172,20 @@ input {
   padding-bottom:0;
   color: $dark-black;
   font-size: 25px;
+  animation: fadein 3s;
   &--font__mint {
     color: $mint;
   }
 }
 
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .GNB {
     & ul {
     padding:30px;
@@ -303,6 +312,7 @@ input {
     color: red;
   }
 }
+
 
 .write {
   form {
