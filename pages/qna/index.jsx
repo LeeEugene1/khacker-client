@@ -24,7 +24,7 @@ function qna() {
     getData()
   }, [])
   return (
-    <div>
+    <section>
       <Head>
         <title>질문과 답변</title>
       </Head>
@@ -35,7 +35,7 @@ function qna() {
         </Loader>
       )}
       {!isLoading && <ItemList list={list} />}
-    </div>
+    </section>
   )
 }
 
