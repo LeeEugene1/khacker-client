@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { LOGOUT } from 'src/store/modules/user'
-import { useRouter } from 'next/router'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
+
 import Button from 'src/components/styled/button'
 
 function Logout() {
@@ -22,7 +22,9 @@ function Logout() {
         </Button>
       </li>
       <li>
-        <Button primary onClick={(e) => handleLogout(e)}>로그아웃</Button>
+        <Button border onClick={(e) => handleLogout(e)}>
+          로그아웃
+        </Button>
       </li>
     </>
   )

@@ -37,10 +37,11 @@ body {
 // section {
 //   padding: 35px;
 // }
-// section {
-//   height: 100vh;
-//   margin-top: 50px;
-// }
+section {
+  // height: 100vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
 .Menu {
   display: flex;
@@ -245,6 +246,7 @@ input {
     // border-radius:5px;
     padding: 20px 25px;
     margin-bottom: -2px;
+    border:none;
 
     &:hover {
       background-color: #ddd;
