@@ -10,7 +10,7 @@
 많은 한국인들이 글로벌 인재로 성장하여 최종적으로 한국에 좋은 기업문화를 도입하고 아이티 기술을 발전시키는 선순환구조를 만드는 것에 일조하는것이 저의 꿈입니다.
 
 ### sign up
-https://user-images.githubusercontent.com/59987309/168484904-666df557-238a-418b-99d9-0ef24ebdc16e.mp4
+https://user-images.githubusercontent.com/59987309/168485193-b6462427-9299-455e-895a-7bff7e565f75.mp4
 
 ### login/logout
 https://user-images.githubusercontent.com/59987309/168484904-666df557-238a-418b-99d9-0ef24ebdc16e.mp4
