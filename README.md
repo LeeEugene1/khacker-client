@@ -9,6 +9,15 @@
 과거 해외취업을 경험 하면서 인도인이나 필리핀사람들이 본인들의 커뮤니티를 만들어 서로 해외취업 정보를 공유하고 서로 이끌어주는것에 큰 부러움을 느꼈습니다. 케이해커는 해외취업을 희망하는 개발자 혹은 해외에 근무하는 개발자들의 정보공유를 위한 한국인 개발자 커뮤니티입니다.
 많은 한국인들이 글로벌 인재로 성장하여 최종적으로 한국에 좋은 기업문화를 도입하고 아이티 기술을 발전시키는 선순환구조를 만드는 것에 일조하는것이 저의 꿈입니다.
 
+### sign up
+https://user-images.githubusercontent.com/59987309/168484904-666df557-238a-418b-99d9-0ef24ebdc16e.mp4
+
+### login/logout
+https://user-images.githubusercontent.com/59987309/168484904-666df557-238a-418b-99d9-0ef24ebdc16e.mp4
+
+### update profile
+https://user-images.githubusercontent.com/59987309/168485057-5a6a0c4e-2582-45b6-b040-f8bc28a83e02.mp4
+
 ## Tech Requirement (Tech Stack)
 
 - HTML, SCSS/styled-components, Javascript
