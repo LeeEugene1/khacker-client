@@ -75,7 +75,7 @@ function access() {
     setToggleActive(index)
   }
   return (
-    <section>
+    <main>
       <div className="tab">
         <div className="tab__links">
           <button className={toggleActive === 0 ? 'tab__links--button active' : 'tab__links--button'} onClick={() => toggletab(0)}>
@@ -171,7 +171,7 @@ function access() {
           </form>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 

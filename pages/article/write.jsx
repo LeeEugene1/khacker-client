@@ -35,20 +35,22 @@ function write() {
   }
   console.log(useLocalStorage('userInfo', 'test', 'get'))
   return (
-    //옵션:qna, 자유게시판, 공지사항
-    <div className="write">
-      <form action="">
-        <select name="" id="">
-          <option value="free">자유게시판</option>
-          <option value="qna">질문과답변</option>
-        </select>
-        <input type="text" name="title" onChange={changeState} value={formData.title} />
-        <textarea id="" name="content" rows="15" cols="" onChange={changeState} value={formData.content} />
-        <Button type="submit" onClick={handleWriteSubmit}>
-          등록
-        </Button>
-      </form>
-    </div>
+    // 옵션:qna, 자유게시판, 공지사항
+    <main>
+      <div className="write">
+        <form action="">
+          <select name="" id="">
+            <option value="free">자유게시판</option>
+            <option value="qna">질문과답변</option>
+          </select>
+          <input type="text" name="title" onChange={changeState} value={formData.title} />
+          <textarea id="" name="content" rows="15" cols="" onChange={changeState} value={formData.content} />
+          <Button type="submit" onClick={handleWriteSubmit}>
+            등록
+          </Button>
+        </form>
+      </div>
+    </main>
   )
 }
 

@@ -37,10 +37,10 @@ body {
 // section {
 //   padding: 35px;
 // }
-section {
-  // height: 100vh;
-  margin-top: 50px;
-  margin-bottom: 50px;
+
+
+ul{
+    padding: 0;
 }
 
 .Menu {
@@ -141,7 +141,7 @@ section {
 //   cursor: pointer;
 // }
 
-input {
+input,textarea,select {
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -158,20 +158,22 @@ input {
   font-size: 1rem;
   text-indent: 10px;
   &:hover {
-    border: 1px solid $light-grey;
+    border: 1px solid grey;
   }
   &:focus {
     border: 1px solid rgb(33, 37, 42);
   }
   & + & {
     margin-top: 1rem;
-    margin-bottom: 1rem;
   }
+// margin-bottom: 10px;
 }
 
+textarea{margin-bottom: 10px !important;}
+
 .banner {
-  padding-top: $innerPadding;
-  padding-bottom:0;
+//   padding-top: $innerPadding;
+//   padding-bottom:$innerPadding;
   color: $dark-black;
   font-size: 25px;
   animation: fadein 3s;
@@ -228,7 +230,7 @@ input {
 
 .tab {
   margin-top: 10px;
-  width: 400px;
+  width: 100%;
   margin: 0 auto;
 
   &__links {
@@ -276,7 +278,6 @@ input {
 
   &__form {
     display: none;
-    padding: 35px;
     border-top: none;
     background-color: #fff;
     border: 1px solid rgba(34, 36, 38, 0.15);
@@ -290,6 +291,7 @@ input {
   }
 
   &__form.active {
+      padding:30px;
     display: inline-flex;
     flex-direction: column;
     width: 100%;
@@ -299,7 +301,7 @@ input {
   }
 
   &__myPage {
-    padding: 35px;
+      padding: 30px;
     background-color: #fff;
     border: 1px solid rgba(34, 36, 38, 0.15);
     border-radius: 5px;
@@ -318,17 +320,18 @@ input {
 
 
 .write {
+width: 100%;
   form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 35px;
+    // gap: 10px;
   }
 }
 
 main{
     width:700px;
     margin:0 auto;
+    margin-top: 50px;
     display:flex !important;
 }
 
