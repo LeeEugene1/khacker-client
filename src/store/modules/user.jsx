@@ -3,7 +3,7 @@
 // 리듀서는 최종적으로 스토어를 변경시킨다
 
 // 액션타입(문자열)
-export const HOST = 'http://localhost:3000'
+export const HOST = 'http://127.0.0.1:8000'
 export const USER_LOGIN = 'user/LOGIN'
 export const USER_LOGOUT = 'user/LOGOUT'
 export const USER_SIGNUP = 'user/create'

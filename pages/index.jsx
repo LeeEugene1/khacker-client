@@ -23,12 +23,28 @@ export default function Home({ list }) {
     </main>
   )
 }
-export async function getServerSideProps(context) {
-  const API_URL = 'http://localhost:3000/main'
-  const res = await Axios.get(API_URL)
+export async function getServerSideProps() {
+  const API_URL = 'http://127.0.0.1:8000'
+  // const res = await Axios.get(API_URL)
+  const res = await fetch(`${API_URL}/main`)
+  const list = await res.json()
+  if (!list) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
-      list: res.data,
+      list,
     },
   }
 }
+// export async function getServerSideProps(context) {
+//   const API_URL = 'http://localhost:3000/main'
+//   const res = await Axios.get(API_URL)
+//   return {
+//     props: {
+//       list: res.data,
+//     },
+//   }
+// }
