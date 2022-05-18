@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"],
+      "@/components/*": ["components/*"],
       "@/hook/*": ["hook/*"],
       "@/store/*": ["store/*"],
       "@/pages/*": ["pages/*"],
@@ -23,7 +22,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.jsx", "pages/qna/qna.jsx", "pages/_app.jsx"],
   "exclude": ["node_modules"]
