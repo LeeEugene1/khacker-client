@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react'
 import Head from 'next/head'
-import { FormContext } from '@/pages/_app'
 import FormInput from 'src/components/layout/FormInput'
 import Button from 'src/components/styled/button'
 import axiosWrapper from 'src/axiosWrapper'
 import { HOST, USER_UPDATE } from 'src/store/modules/user'
 import useLocalStorage from 'src/hooks/useLocalStorage'
+import { FormContext } from '@/pages/_app'
 
 function myPage() {
   const initialErrorMessage = {
@@ -51,7 +51,7 @@ function myPage() {
     alert('회원정보가 수정되었습니다.')
   }
   return (
-    <section>
+    <main>
       <div className="tab">
         <Head>
           <title>마이페이지</title>
@@ -111,7 +111,7 @@ function myPage() {
           </form>
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 
