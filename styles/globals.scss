@@ -342,8 +342,11 @@ aside{
 .footer {
   &__copyright {
     text-align: center;
-    font-size: 14px;
-    margin: 10px 0;
+    font-size: 11px;
+    // margin: 20px 0;
+    height: 100px;
+    line-height: 100px;
+    color:$grey;
   }
 }
 .board {

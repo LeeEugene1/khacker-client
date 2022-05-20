@@ -17,9 +17,9 @@ export default function Home({ list }) {
         <Gnb />
         <div>{list && list.content.map((item) => <ItemList item={item} />)}</div>
       </section>
-      <aside>
+      {/* <aside>
         <input type="text" />
-      </aside>
+      </aside> */}
     </main>
   )
 }
