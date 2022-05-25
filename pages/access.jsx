@@ -7,6 +7,7 @@ import FormInput from 'src/components/layout/FormInput'
 import { HOST, LOGIN, USER_LOGIN, USER_SIGNUP } from 'src/store/modules/user'
 import { FormContext } from 'pages/_app'
 import useLocalStorage from 'src/hooks/useLocalStorage'
+import Axios from 'axios'
 
 function access() {
   const { formData, setFormData } = useContext(FormContext)
@@ -47,7 +48,8 @@ function access() {
         }),
       )
     }
-    axiosWrapper('POST', url, requestBody).then(login)
+    // axiosWrapper('POST', url, requestBody).then(login)
+    Axios.post(url, requestBody).then(login)
   }
 
   const handleSignUpSubmit = (e) => {
