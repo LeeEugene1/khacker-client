@@ -4,8 +4,20 @@ import 'semantic-ui-css/semantic.min.css'
 import Gnb from 'src/components/layout/Gnb'
 import Banner from 'src/components/layout/Banner'
 import Axios from 'axios'
+import { useEffect,useState } from 'react'
 
-export default function Home({ list }) {
+export default function Home({ list,name }) {
+    // console.log(list)
+    // list.content는 자유게시판과 질문과답변이있다
+    // slug: 'free'
+    // title: '자유게시판'
+    // __v: 0
+    // _id: '623d67274014912301a4ffdc'
+
+    // slug: 'qna'
+    // title: '질문과답변'
+    // __v: 0
+    // _id: '623d6912df87930d9bdc68eb'
   return (
     <main>
       <Head>
@@ -15,7 +27,11 @@ export default function Home({ list }) {
       <section>
         <Banner />
         <Gnb />
-        <div>{list && list.content.map((item) => <ItemList item={item} />)}</div>
+        {/* contextAPI 혹은 props로 gnb메뉴를 클릭하면 관련API가 나오도록 */}
+        {name}
+        {/* 질문과답변만나오게하려면?? filter*/}
+        {/* <div>{list && list.content.map((item) => <ItemList item={item} />)}</div> */}
+        <div>{list && (list.content.filter((item)=>(item.slug === 'free'))).map((item) => <ItemList item={item} />)}</div>
       </section>
       {/* <aside>
         <input type="text" />
@@ -23,9 +39,13 @@ export default function Home({ list }) {
     </main>
   )
 }
-export async function getServerSideProps() {
-  const API_URL = 'http://127.0.0.1:8000'
-  // const res = await Axios.get(API_URL)
+
+export const getStaticProps = async () => {
+  // const API_URL = 'http://localhost:8000'
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
+  // const list = await Axios.get(`${API_URL}/main`)
+
+  try{
   const res = await fetch(`${API_URL}/main`)
   const list = await res.json()
   if (!list) {
@@ -35,16 +55,13 @@ export async function getServerSideProps() {
   }
   return {
     props: {
-      list,
+      list: list,
+      name: process.env.name,
     },
+    // fallback: 'blocking',
   }
+}catch(err){
+    return { notFound:true}
 }
-// export async function getServerSideProps(context) {
-//   const API_URL = 'http://localhost:3000/main'
-//   const res = await Axios.get(API_URL)
-//   return {
-//     props: {
-//       list: res.data,
-//     },
-//   }
-// }
+}
+// https://stackoverflow.com/questions/66841538/the-notfound-prop-of-getstaticprops-has-no-effect-on-page-http-status-code
