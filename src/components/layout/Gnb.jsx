@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-function Gnb() {
+
+function Gnb({ slugName }) {
+  console.log('ssss',slugName)
+  slugName = 'test'
   const [toggleActive, setToggleActive] = useState(0)
   const toggletab = (index) => {
     setToggleActive(index)
