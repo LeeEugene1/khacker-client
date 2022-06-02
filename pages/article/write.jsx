@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import useLocalStorage from 'src/hooks/useLocalStorage'
 import Button from 'src/components/styled/button'
 import axiosWrapper from '/src/axiosWrapper'
@@ -30,10 +30,15 @@ function write() {
     }
     debugger
     axiosWrapper('POST', url, requestBody)
+
     alert('게시글이 등록되었습니다.')
     Router.push('/')
   }
-  console.log(useLocalStorage('userInfo', 'test', 'get'))
+
+  useEffect(()=>{
+
+  },[])
+  // console.log(useLocalStorage('userInfo', 'test', 'get'))
   return (
     // 옵션:qna, 자유게시판, 공지사항
     <main>

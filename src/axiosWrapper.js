@@ -16,8 +16,8 @@ const onCatchProcess = (data) => {
   return data
 }
 
-const axiosWrapper = (method, url, data) => {
-  return axios({
+const axiosWrapper = async (method, url, data) => {
+  return await axios({
     method,
     url,
     data,

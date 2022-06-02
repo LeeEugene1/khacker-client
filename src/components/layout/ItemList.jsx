@@ -4,7 +4,7 @@ import { HOST } from 'src/store/modules/user'
 import Router from 'next/router'
 import Image from 'next/image'
 
-function ItemList({ item, key }) {
+function ItemList({ item, key, test }) {
   const move = (id) => {
     const url = `${HOST}/article/${id}`
     console.log(url)
