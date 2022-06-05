@@ -13,16 +13,16 @@ function Gnb({ slugName }) {
     <div className="GNB">
       <ul>
         <li className={toggleActive === 0 ? 'GNB__tab--li active' : 'GNB__tab--li'} onClick={() => setToggleActive(0)}>
-            <a>전체</a>
+            <p>전체</p>
         </li>
         <li className={toggleActive === 1 ? 'GNB__tab--li active' : 'GNB__tab--li'} onClick={() => setToggleActive(1)}>
-            <a>커뮤니티</a>
+            <p>커뮤니티</p>
         </li>
         <li className={toggleActive === 2 ? 'GNB__tab--li active' : 'GNB__tab--li'} onClick={() => setToggleActive(2)}>
-            <a>질문과 답변</a>
+            <p>질문과 답변</p>
         </li>
         <li className={toggleActive === 3 ? 'GNB__tab--li active' : 'GNB__tab--li'} onClick={() => setToggleActive(2)}>
-            <a>자유게시판</a>
+            <p>자유게시판</p>
         </li>
       </ul>
 

@@ -206,22 +206,22 @@ textarea{margin-bottom: 10px !important;}
 	&:first-child{
 		margin-left:0
 	}
-    a {
+    p {
       color: $mint;
       padding: 10px;
-      display: block;
+      cursor: pointer;
     }
 
     &:hover {
       background-color: $mint;
-      a {
+      p {
         color: white;
       }
     }
 
     &.active {
       background-color: $mint;
-      a {
+      p {
         color: white;
       }
     }
