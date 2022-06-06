@@ -242,17 +242,14 @@ textarea{margin-bottom: 10px !important;}
     background-color: inherit;
     outline: none;
     cursor: pointer;
-    // transition: 0.3s;
     height: 50px;
     color: $dark;
-    // border-radius:5px;
     padding: 20px 25px;
     margin-bottom: -2px;
     border:none;
 
     &:hover {
       background-color: #ddd;
-      // border-radius:5px;
       color: $black;
     }
 
@@ -295,7 +292,6 @@ textarea{margin-bottom: 10px !important;}
     display: inline-flex;
     flex-direction: column;
     width: 100%;
-    // margin:10px 0;
     border: 1px solid $grey;
     border-top: none;
   }
@@ -324,7 +320,6 @@ width: 100%;
   form {
     display: flex;
     flex-direction: column;
-    // gap: 10px;
   }
 }
 
@@ -343,7 +338,6 @@ aside{
   &__copyright {
     text-align: center;
     font-size: 11px;
-    // margin: 20px 0;
     height: 100px;
     line-height: 100px;
     color:$grey;
@@ -352,12 +346,6 @@ aside{
 .board {
 	padding-top:0;
 	height: 100%;
-//   &--title {
-//     @include innerBoard;
-//   }
-//   &--content {
-//     @include innerBoard;
-//   }
     &__header{
         margin:20px 0;
         display:flex;
@@ -372,8 +360,6 @@ aside{
     &__content{
         width:500px;
         &--createdAt{
-            // margin-top:10px;
-            // color:$grey;
         }
         &--icon{
             display:flex;
